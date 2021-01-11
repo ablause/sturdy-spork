@@ -1,0 +1,18 @@
+version: "3.6"
+
+services:
+  # Server
+  server:
+    image: docker.pkg.github.com/ablause/sturdy-spork/sturdy-spork-server:latest
+    volumes:
+      - ./workspaces/server/env/local.env:/usr/src/sturdy-spork/workspaces/server/env/local.env
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=local
+
+  # Client
+  client:
+    image: docker.pkg.github.com/ablause/sturdy-spork/sturdy-spork-client:latest
+    ports:
+      - "8000:80"

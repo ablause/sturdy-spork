@@ -1,0 +1,25 @@
+{
+  "name": "sturdy-spork",
+  "version": "0.1.0",
+  "author": "Alexandre Blause",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ablause/sturdy-spork.git"
+  },
+  "scripts": {
+    "start": "yarn start:server && yarn start:client",
+    "start:server": "yarn workspace @sturdy-spork/server start",
+    "start:client": "yarn workspace @sturdy-spork/client start",
+    "develop": "yarn watch:server && yarn watch:client",
+    "develop:server": "yarn workspace @sturdy-spork/server watch:start",
+    "develop:client": "yarn workspace @sturdy-spork/client watch:start",
+    "build": "yarn build:server && yarn build:client",
+    "build:server": "yarn workspace @sturdy-spork/server build",
+    "build:client": "yarn workspace @sturdy-spork/client build"
+  },
+  "workspaces": [
+    "workspaces/*"
+  ]
+}

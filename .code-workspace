@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "name": "@sturdy-spork/server",
+      "path": "./workspaces/server"
+    },
+    {
+      "name": "@sturdy-spork/client",
+      "path": "./workspaces/client"
+    }
+  ]
+}
