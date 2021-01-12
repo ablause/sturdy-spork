@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "./"
+    },
+    {
+      "name": "@sturdy-spork/cli",
+      "path": "./packages/cli"
+    },
+    {
+      "name": "@sturdy-spork/client",
+      "path": "./packages/client"
+    },
+    {
+      "name": "@sturdy-spork/server",
+      "path": "./packages/server"
+    },
+    {
+      "name": "@sturdy-spork/shared",
+      "path": "./packages/shared"
+    }
+  ],
+  "settings": {
+    "typescript.tsdk": "root\\node_modules\\typescript\\lib"
+  }
+}

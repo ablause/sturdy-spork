@@ -9,15 +9,9 @@
     "url": "git+https://github.com/ablause/sturdy-spork.git"
   },
   "scripts": {
-    "start": "yarn start:server && yarn start:client",
-    "start:server": "yarn workspace @sturdy-spork/server start",
-    "start:client": "yarn workspace @sturdy-spork/client start",
-    "develop": "yarn watch:server && yarn watch:client",
-    "develop:server": "yarn workspace @sturdy-spork/server watch:start",
-    "develop:client": "yarn workspace @sturdy-spork/client watch:start",
-    "build": "yarn build:server && yarn build:client",
-    "build:server": "yarn workspace @sturdy-spork/server build",
-    "build:client": "yarn workspace @sturdy-spork/client build"
+    "start": "yarn workspace @sturdy-spork/server start && yarn workspace @sturdy-spork/client start",
+    "develop": "yarn workspace @sturdy-spork/server develop && yarn workspace @sturdy-spork/client develop",
+    "build": "yarn workspace @sturdy-spork/server build && yarn workspace @sturdy-spork/client build"
   },
   "workspaces": [
     "workspaces/*"
