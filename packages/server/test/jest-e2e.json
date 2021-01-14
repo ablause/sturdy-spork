@@ -1,0 +1,35 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@app/crm-module/(.*)": "<rootDir>/../libs/crm-module/src/$1",
+    "@app/crm-module": "<rootDir>/../libs/crm-module/src",
+    "@app/nest-crm/(.*)": "<rootDir>/../libs/nest-crm/src/$1",
+    "@app/nest-crm": "<rootDir>/../libs/nest-crm/src",
+    "@app/nestjs-crm/(.*)": "<rootDir>/../libs/nestjs-crm/src/$1",
+    "@app/nestjs-crm": "<rootDir>/../libs/nestjs-crm/src",
+    "@app/nestjs-google-storage/(.*)": "<rootDir>/../libs/nestjs-google-storage/src/$1",
+    "@app/nestjs-google-storage": "<rootDir>/../libs/nestjs-google-storage/src",
+    "@app/nestjs-inventory-management/(.*)": "<rootDir>/../libs/nestjs-inventory-management/src/$1",
+    "@app/nestjs-inventory-management": "<rootDir>/../libs/nestjs-inventory-management/src",
+    "@app/nestjs-purchase-management/(.*)": "<rootDir>/../libs/nestjs-purchase-management/src/$1",
+    "@app/nestjs-purchase-management": "<rootDir>/../libs/nestjs-purchase-management/src",
+    "@app/nestjs-inventory-manager/(.*)": "<rootDir>/../libs/nestjs-inventory-manager/src/$1",
+    "@app/nestjs-inventory-manager": "<rootDir>/../libs/nestjs-inventory-manager/src",
+    "@app/nestjs-purchase-manager/(.*)": "<rootDir>/../libs/nestjs-purchase-manager/src/$1",
+    "@app/nestjs-purchase-manager": "<rootDir>/../libs/nestjs-purchase-manager/src",
+    "@app/nestjs-customer-manager/(.*)": "<rootDir>/../libs/nestjs-customer-manager/src/$1",
+    "@app/nestjs-customer-manager": "<rootDir>/../libs/nestjs-customer-manager/src",
+    "@app/nestjs-customer-management/(.*)": "<rootDir>/../libs/nestjs-customer-management/src/$1",
+    "@app/nestjs-customer-management": "<rootDir>/../libs/nestjs-customer-management/src"
+  }
+}
