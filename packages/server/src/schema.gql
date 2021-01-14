@@ -1,0 +1,139 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+interface LoginResult {
+  user: User!
+  token: String!
+}
+
+type Organization {
+  _id: ID!
+  name: String!
+  address: String!
+  description: String!
+  users: String
+}
+
+type Customer {
+  _id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  phone: String!
+  address: String!
+  description: String!
+}
+
+type UserPasswordReset {
+  token: String!
+  expiration: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type UserProfile {
+  firstName: String!
+  lastName: String!
+  phone: String!
+  email: String!
+  address: String!
+}
+
+type User {
+  _id: ID!
+  identifier: String!
+  password: String!
+  profile: UserProfile!
+  enabled: Boolean!
+  permissions: String!
+  passwordReset: UserPasswordReset!
+  lastSeenAt: DateTime!
+  organisation: String!
+}
+
+type Query {
+  organization(_id: String!): Organization!
+  organizations(limit: Float!, offset: Float!): [Organization!]!
+  customer(_id: String!): Customer!
+  customers(limit: Float!, offset: Float!): [Customer!]!
+  login(user: LoginUserDto!): LoginResult!
+  refreshToken: String!
+  me: User!
+  user(_id: String!): User!
+  users(limit: Float!, offset: Float!): [User!]!
+}
+
+input LoginUserDto {
+  identifier: String!
+  password: String!
+}
+
+type Mutation {
+  createOrganization(input: CreateOrganizationDto!): Organization!
+  updateOrganization(input: UpdateOrganizationDto!, _id: String!): Organization!
+  removeOrganisation(_id: String!): Organization!
+  createCustomer(input: CreateCustomerDto!): Customer!
+  updateCustomer(input: UpdateCustomerDto!, _id: String!): Customer!
+  removeCustomer(_id: String!): Customer!
+  register(input: CreateUserDto!): User!
+  updateUser(input: UpdateUserDto!, _id: String!): User!
+  removeUser(_id: String!): User!
+}
+
+input CreateOrganizationDto {
+  name: String!
+  address: String!
+  description: String!
+  users: String
+}
+
+input UpdateOrganizationDto {
+  name: String
+  address: String
+  description: String
+  users: String
+}
+
+input CreateCustomerDto {
+  firstName: String!
+  lastName: String!
+  email: String!
+  phone: String!
+  address: String!
+  description: String!
+}
+
+input UpdateCustomerDto {
+  firstName: String
+  lastName: String
+  email: String
+  phone: String
+  address: String
+  description: String
+}
+
+input CreateUserDto {
+  identifier: String!
+  password: String!
+  profile: CreateUserProfile!
+  organisation: String
+}
+
+input CreateUserProfile {
+  firstName: String!
+  lastName: String!
+  email: String!
+  phone: String!
+  address: String!
+}
+
+input UpdateUserDto {
+  identifier: String
+  password: String
+  profile: CreateUserProfile
+  organisation: String
+}
