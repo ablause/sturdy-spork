@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MailerModule } from '@nestjs-modules/mailer';
@@ -14,6 +13,7 @@ import { MailerConfigService } from './configs/mailer/mailer.service';
 import { MailerConfigModule } from './configs/mailer/mailer.module';
 
 // Modules
+import { ConfigsModule } from './modules/configs/configs.module';
 import { ApplicationsModule } from './modules/applications/applications.module';
 import { OrganizationsModule } from './modules/organizations/organizations.module';
 import { CustomersModule } from './modules/customers/customers.module';
@@ -22,7 +22,7 @@ import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ cache: true, isGlobal: true }),
+    ConfigsModule.forRoot({ cache: true, isGlobal: true }),
     MongooseModule.forRootAsync({ useClass: MongooseConfigService }),
     GraphQLModule.forRootAsync({ useClass: GraphqlConfigService }),
     MailerModule.forRootAsync({ useClass: MailerConfigService }),

@@ -1,13 +1,22 @@
 import { BadRequestException } from '@nestjs/common';
+import { getModelToken } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
+
 import { OrganizationsService } from './organizations.service';
+import { OrganizationSchema } from './schemas/organization.schema';
 
 describe('OrganizationsService', () => {
   let service: OrganizationsService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [OrganizationsService],
+      providers: [
+        OrganizationsService,
+        {
+          provide: getModelToken(OrganizationsService.name),
+          useValue: {},
+        },
+      ],
     }).compile();
 
     service = module.get<OrganizationsService>(OrganizationsService);
