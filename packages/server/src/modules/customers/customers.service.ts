@@ -43,11 +43,9 @@ export class CustomersService {
     _id: string,
     input: UpdateCustomerDto,
   ): Promise<ICustomer> {
-    const existingCustomer = this.customerModel.findOneAndUpdate(
-      { _id },
-      input,
-      { new: true },
-    );
+    const existingCustomer = this.customerModel.findByIdAndUpdate(_id, input, {
+      new: true,
+    });
 
     if (!existingCustomer) {
       throw new NotFoundException(`Customer #${_id} not found`);

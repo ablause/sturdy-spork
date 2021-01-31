@@ -13,7 +13,7 @@ export class OrganizationsService {
     private readonly organizationModel: Model<Organization>,
   ) {}
 
-  public async findAll(offset: number, limit: number) {
+  public async findAll(offset: number, limit: number): Promise<Organization[]> {
     return await this.organizationModel
       .find()
       .skip(offset)
@@ -44,8 +44,8 @@ export class OrganizationsService {
     _id: string,
     input: UpdateOrganizationDto,
   ): Promise<Organization> {
-    const existingOrganisation = await this.organizationModel.findOneAndUpdate(
-      { _id },
+    const existingOrganisation = await this.organizationModel.findByIdAndUpdate(
+      _id,
       input,
       { new: true },
     );
