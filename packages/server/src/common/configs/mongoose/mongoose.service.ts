@@ -1,8 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import {
-  MongooseOptionsFactory,
-  MongooseModuleOptions,
-} from '@nestjs/mongoose';
+import { MongooseOptionsFactory, MongooseModuleOptions } from '@nestjs/mongoose';
 
 @Injectable()
 export class MongooseConfigService implements MongooseOptionsFactory {
@@ -10,7 +7,7 @@ export class MongooseConfigService implements MongooseOptionsFactory {
     return {
       uri: process.env.DATABASE_URL,
       useUnifiedTopology: true,
-      useFindAndModify: true,
+      useFindAndModify: false,
       useNewUrlParser: true,
       useCreateIndex: true,
     };

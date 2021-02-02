@@ -14,7 +14,7 @@ export class GraphqlConfigService implements GqlOptionsFactory {
     return {
       autoSchemaFile: path.join(process.cwd(), 'src/schema.gql'),
       definitions: {
-        path: path.join(process.cwd(), 'src/typings/graphql.ts'),
+        path: path.join(process.cwd(), 'src/typings/gql.ts'),
         outputAs: 'class',
       },
       // directiveResolvers,

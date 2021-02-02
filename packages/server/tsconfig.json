@@ -9,14 +9,13 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "incremental": true,
     "resolveJsonModule": true,
     "paths": {
-      "~typings/*": ["./src/typings/*"],
-      "~modules/*": ["./src/modules/*"],
-      "~configs/*": ["./src/configs/*"],
-      "~common/*": ["./src/common/*"]
+      "@typings/*": ["./src/typings/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@common/*": ["./src/common/*"]
     }
   },
   "include": ["./src"],

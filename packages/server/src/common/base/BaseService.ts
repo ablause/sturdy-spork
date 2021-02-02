@@ -1,8 +1,8 @@
-import { InjectModel } from '@nestjs/mongoose';
 import { Document, LeanDocumentOrArray, Model } from 'mongoose';
-
-import IBaseService, { QueryOptions } from '@/interfaces/IBaseService';
+import { InjectModel } from '@nestjs/mongoose';
 import { HttpException } from '@nestjs/common';
+
+import { IBaseService, QueryOptions } from '@common/interfaces';
 
 /**
  * @typeParam M  Mongoose Model for service.
