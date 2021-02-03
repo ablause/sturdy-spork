@@ -18,6 +18,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - run: yarn install
+
       - name: Run yarn test
         uses: mattallty/jest-github-action@v1
         env:
