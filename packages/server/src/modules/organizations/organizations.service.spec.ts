@@ -1,13 +1,9 @@
-import { BadRequestException } from '@nestjs/common';
-import { getModelToken, MongooseModule } from '@nestjs/mongoose';
+import { MongooseModule } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 
 import { OrganizationsService } from './organizations.service';
-import {
-  Organization,
-  OrganizationSchema,
-} from './schemas/organization.schema';
+import { Organization, OrganizationSchema } from './schemas/organization.schema';
 
 const exemple = {
   name: 'testOrg',
@@ -32,9 +28,7 @@ describe('OrganizationsService', () => {
             useCreateIndex: true,
           }),
         }),
-        MongooseModule.forFeature([
-          { name: Organization.name, schema: OrganizationSchema },
-        ]),
+        MongooseModule.forFeature([{ name: Organization.name, schema: OrganizationSchema }]),
       ],
       providers: [OrganizationsService],
     }).compile();
@@ -69,7 +63,9 @@ describe('OrganizationsService', () => {
 
   it('should get all organizations', async () => {
     await service.create(exemple);
-    const result = await service.findAll(0, 10);
+    const result = await service.findAll({ page: 1, limit: 10 });
+
+    console.log('result', result);
 
     expect(result.length).toBe(1);
   });
@@ -86,12 +82,12 @@ describe('OrganizationsService', () => {
 
   it('should remove organization', async () => {
     const organization = await service.create(exemple);
-    let result = await service.findAll(0, 10);
+    let result = await service.findAll({ limit: 10 });
 
     expect(result.length).toBe(1);
 
-    await service.remove(organization._id);
-    result = await service.findAll(0, 10);
+    await service.delete(organization._id);
+    result = await service.findAll({ limit: 10 });
 
     expect(result.length).toBe(0);
   });

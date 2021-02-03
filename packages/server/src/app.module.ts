@@ -5,16 +5,15 @@ import { MailerModule } from '@nestjs-modules/mailer';
 // import * as path from 'path';
 
 // Configs
-import { GraphqlConfigModule } from './configs/graphql/graphql.module';
-import { GraphqlConfigService } from './configs/graphql/graphql.service';
-import { MongooseConfigModule } from './configs/mongoose/mongoose.module';
-import { MongooseConfigService } from './configs/mongoose/mongoose.service';
-import { MailerConfigService } from './configs/mailer/mailer.service';
-import { MailerConfigModule } from './configs/mailer/mailer.module';
+import { GraphqlConfigModule } from './common/configs/graphql/graphql.module';
+import { GraphqlConfigService } from './common/configs/graphql/graphql.service';
+import { MongooseConfigModule } from './common/configs/mongoose/mongoose.module';
+import { MongooseConfigService } from './common/configs/mongoose/mongoose.service';
+import { MailerConfigService } from './common/configs/mailer/mailer.service';
+import { MailerConfigModule } from './common/configs/mailer/mailer.module';
 
 // Modules
 import { ConfigsModule } from './modules/configs/configs.module';
-import { ApplicationsModule } from './modules/applications/applications.module';
 import { OrganizationsModule } from './modules/organizations/organizations.module';
 import { CustomersModule } from './modules/customers/customers.module';
 import { UsersModule } from './modules/users/users.module';
@@ -29,7 +28,6 @@ import { AuthModule } from './modules/auth/auth.module';
     GraphqlConfigModule,
     MongooseConfigModule,
     MailerConfigModule,
-    ApplicationsModule,
     OrganizationsModule,
     CustomersModule,
     AuthModule,

@@ -1,9 +1,9 @@
 import { Args, Resolver, Query, Context, Mutation } from '@nestjs/graphql';
 
+import { CurrentUser } from '@common/decorators/current-user.decorator';
 import { CreateUserDto, UpdateUserDto } from './dtos';
 import { UsersService } from './users.service';
 import { User } from './schemas/user.schema';
-import { CurrentUser } from 'src/decorators/current-user.decorator';
 
 @Resolver()
 export class UsersResolver {
@@ -25,20 +25,14 @@ export class UsersResolver {
   }
 
   @Mutation(() => User, { name: 'register' })
-  async createUser(
-    @Args('input') input: CreateUserDto,
-    @Context('pubSub') pubSub: any,
-  ) {
+  async createUser(@Args('input') input: CreateUserDto, @Context('pubSub') pubSub: any) {
     const createdUser = await this.userService.create(input);
     pubSub.publish('userCreated', { userCreated: createdUser });
     return createdUser;
   }
 
   @Mutation(() => User)
-  async updateUser(
-    @Args('_id') _id: string,
-    @Args('input') input: UpdateUserDto,
-  ) {
+  async updateUser(@Args('_id') _id: string, @Args('input') input: UpdateUserDto) {
     return await this.userService.update(_id, input);
   }
 

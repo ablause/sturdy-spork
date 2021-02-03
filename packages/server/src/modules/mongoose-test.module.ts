@@ -11,7 +11,7 @@ export const mongooseTestModule = (options: MongooseModuleOptions = {}) =>
       return {
         uri: await mongodb.getUri(),
         useUnifiedTopology: true,
-        useFindAndModify: true,
+        useFindAndModify: false,
         useNewUrlParser: true,
         useCreateIndex: true,
         ...options,

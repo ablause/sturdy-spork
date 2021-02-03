@@ -10,12 +10,7 @@ describe('CustomerService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [
-        mongooseTestModule(),
-        MongooseModule.forFeature([
-          { name: Customer.name, schema: CustomerSchema },
-        ]),
-      ],
+      imports: [mongooseTestModule(), MongooseModule.forFeature([{ name: Customer.name, schema: CustomerSchema }])],
       providers: [CustomersService],
     }).compile();
 

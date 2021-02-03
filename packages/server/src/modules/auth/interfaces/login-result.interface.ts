@@ -1,5 +1,5 @@
 import { Field, InterfaceType } from '@nestjs/graphql';
-import { User } from '~modules/users/schemas/user.schema';
+import { User } from '@modules/users/schemas/user.schema';
 
 @InterfaceType()
 export class LoginResult {

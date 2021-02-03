@@ -1,8 +1,8 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
-import { IUser } from '~modules/users/interfaces/user.interface';
 
+import { IUser } from '@modules/users/interfaces/user.interface';
 import { UsersService } from '../users/users.service';
 import { LoginUserDto } from './dtos/login-user.dto';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
@@ -18,9 +18,7 @@ export class AuthService {
   ) {}
 
   public async validateUser(loginAttempt: LoginUserDto) {
-    const userToAttempt = await this.usersService.findOneByIdentifier(
-      loginAttempt.identifier,
-    );
+    const userToAttempt = await this.usersService.findOneByIdentifier(loginAttempt.identifier);
 
     if (!userToAttempt.enabled) return undefined;
 
@@ -48,9 +46,7 @@ export class AuthService {
   }
 
   public async validateJwtPayload(payload: JwtPayload) {
-    const user = await this.usersService.findOneByIdentifier(
-      payload.identifier,
-    );
+    const user = await this.usersService.findOneByIdentifier(payload.identifier);
 
     if (user && user.enabled) {
       user.lastSeenAt = new Date();

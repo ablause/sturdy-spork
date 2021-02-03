@@ -1,7 +1,7 @@
 import { Args, Resolver, Context, Query } from '@nestjs/graphql';
 import { AuthenticationError } from 'apollo-server-core';
-import { IUser } from '~modules/users/interfaces/user.interface';
 
+import { IUser } from '@modules/users/interfaces/user.interface';
 import { AuthService } from './auth.service';
 import { LoginUserDto } from './dtos/login-user.dto';
 import { LoginResult } from './interfaces/login-result.interface';
@@ -15,9 +15,7 @@ export class AuthResolver {
     const result = await this.authService.validateUser(user);
 
     if (!result) {
-      throw new AuthenticationError(
-        'Could not log-in with the provided credentials',
-      );
+      throw new AuthenticationError('Could not log-in with the provided credentials');
     }
 
     return result;
@@ -29,17 +27,13 @@ export class AuthResolver {
     const user: IUser = request.user;
 
     if (!user) {
-      throw new AuthenticationError(
-        'Could not log-in with the provided credentials',
-      );
+      throw new AuthenticationError('Could not log-in with the provided credentials');
     }
 
     const result = await this.authService.createJwt(user);
 
     if (!result) {
-      throw new AuthenticationError(
-        'Could not log-in with the provided credentials',
-      );
+      throw new AuthenticationError('Could not log-in with the provided credentials');
     }
 
     return result.token;

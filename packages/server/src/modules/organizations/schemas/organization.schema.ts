@@ -1,13 +1,12 @@
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
-import { ObjectType, Field, ID } from '@nestjs/graphql';
-import { Document, Types } from 'mongoose';
+import { ObjectType, Field } from '@nestjs/graphql';
+import { LeanDocumentOrArray, Types } from 'mongoose';
+
+import { BaseDocument } from '@common/base';
 
 @Schema()
 @ObjectType()
-export class Organization extends Document {
-  @Field(() => ID)
-  _id: string;
-
+export class Organization extends BaseDocument {
   @Prop({ required: true })
   @Field()
   name: string;
@@ -22,6 +21,16 @@ export class Organization extends Document {
 
   @Prop({ type: [Types.ObjectId], ref: 'User' })
   @Field({ nullable: true })
+  users: string;
+}
+
+export class IOrganization implements LeanDocumentOrArray<Organization> {
+  _id: any;
+  __v: any;
+  id: string;
+  name: string;
+  address: string;
+  description: string;
   users: string;
 }
 
