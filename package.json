@@ -11,7 +11,8 @@
   "scripts": {
     "start": "yarn workspace @sturdy-spork/server start && yarn workspace @sturdy-spork/client start",
     "develop": "yarn workspace @sturdy-spork/server develop && yarn workspace @sturdy-spork/client develop",
-    "build": "yarn workspace @sturdy-spork/server build && yarn workspace @sturdy-spork/client build"
+    "build": "yarn workspace @sturdy-spork/server build && yarn workspace @sturdy-spork/client build",
+    "test": "yarn workspace @sturdy-spork/server test"
   },
   "workspaces": [
     "packages/*"

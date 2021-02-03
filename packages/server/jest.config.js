@@ -8,10 +8,12 @@ module.exports = {
   roots: ['<rootDir>'],
   modulePaths: ['<rootDir>'],
   moduleNameMapper: pathsToModuleNameMapper(paths),
-      "moduleDirectories": [
+  "moduleDirectories": [
       ".",
       "src",
       "src/common",
+      "src/modules",
+      "src/typings",
       "node_modules"
-    ]
+  ],
 };
