@@ -14,7 +14,7 @@
     },
     {
       "name": "@sturdy-spork/server",
-      "path": "./packages/server"
+      "path": "./packages/server",
     },
     {
       "name": "@sturdy-spork/shared",
