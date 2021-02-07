@@ -1,6 +1,6 @@
 import { Args, Resolver, Query, Context, Mutation } from '@nestjs/graphql';
 
-import { CurrentUser } from '@common/decorators/current-user.decorator';
+import { CurrentUser } from 'common/decorators/current-user.decorator';
 import { CreateUserDto, UpdateUserDto } from './dtos';
 import { UsersService } from './users.service';
 import { User } from './schemas/user.schema';

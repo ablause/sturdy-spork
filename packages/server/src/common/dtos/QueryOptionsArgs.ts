@@ -1,5 +1,5 @@
 import { InputType, Field } from '@nestjs/graphql';
-import { QueryOptions } from '@common/interfaces';
+import { QueryOptions } from 'common/interfaces';
 
 @InputType()
 class QueryOptionsArgs implements QueryOptions {

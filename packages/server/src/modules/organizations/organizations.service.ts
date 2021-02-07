@@ -4,7 +4,7 @@ import { Model } from 'mongoose';
 
 import { CreateOrganizationDto, UpdateOrganizationDto } from './dtos';
 import { Organization } from './schemas/organization.schema';
-import { BaseService } from '@common/base';
+import { BaseService } from '../../common/base';
 
 @Injectable()
 export class OrganizationsService extends BaseService<Organization, CreateOrganizationDto, UpdateOrganizationDto> {

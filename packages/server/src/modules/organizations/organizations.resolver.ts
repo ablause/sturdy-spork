@@ -1,6 +1,6 @@
 import { Args, Resolver, Query, Mutation } from '@nestjs/graphql';
 
-import { QueryOptionsArgs } from '@common/dtos';
+import { QueryOptionsArgs } from '../../common/dtos';
 import { CreateOrganizationDto, UpdateOrganizationDto } from './dtos';
 import { OrganizationsService } from './organizations.service';
 import { Organization } from './schemas/organization.schema';

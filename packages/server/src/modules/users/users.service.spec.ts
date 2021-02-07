@@ -7,8 +7,8 @@ import { mongooseTestModule } from '../mongoose-test.module';
 import { User, UserSchema } from './schemas/user.schema';
 import { UsersService } from './users.service';
 
-import { MailerConfigModule } from '@common/configs/mailer/mailer.module';
-import { MailerConfigService } from '@common/configs/mailer/mailer.service';
+import { MailerConfigModule } from 'common/configs/mailer/mailer.module';
+import { MailerConfigService } from 'common/configs/mailer/mailer.service';
 
 describe('UsersService', () => {
   let moduleRef: TestingModule;

@@ -2,7 +2,7 @@ import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 import { ObjectType, Field } from '@nestjs/graphql';
 import { LeanDocumentOrArray, Types } from 'mongoose';
 
-import { BaseDocument } from '@common/base';
+import { BaseDocument } from 'common/base';
 
 @Schema()
 @ObjectType()

@@ -2,7 +2,7 @@ import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 
-import { IUser } from '@modules/users/interfaces/user.interface';
+import { IUser } from 'modules/users/interfaces/user.interface';
 import { UsersService } from '../users/users.service';
 import { LoginUserDto } from './dtos/login-user.dto';
 import { JwtPayload } from './interfaces/jwt-payload.interface';

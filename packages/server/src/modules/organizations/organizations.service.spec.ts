@@ -65,8 +65,6 @@ describe('OrganizationsService', () => {
     await service.create(exemple);
     const result = await service.findAll({ page: 1, limit: 10 });
 
-    console.log('result', result);
-
     expect(result.length).toBe(1);
   });
 

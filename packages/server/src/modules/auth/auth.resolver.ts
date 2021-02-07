@@ -1,7 +1,7 @@
 import { Args, Resolver, Context, Query } from '@nestjs/graphql';
 import { AuthenticationError } from 'apollo-server-core';
 
-import { IUser } from '@modules/users/interfaces/user.interface';
+import { IUser } from 'modules/users/interfaces/user.interface';
 import { AuthService } from './auth.service';
 import { LoginUserDto } from './dtos/login-user.dto';
 import { LoginResult } from './interfaces/login-result.interface';

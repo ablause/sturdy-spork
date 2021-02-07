@@ -1,4 +1,4 @@
-name: Test & Coverage
+name: Tests & Coverage
 
 on: [push]
 
@@ -22,7 +22,7 @@ jobs:
         run: yarn install
 
       - name: Run the tests
-        run: "yarn test --coverage"
+        run: "yarn test --ci --coverage --collectCoverage"
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
