@@ -1,19 +1,11 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { pathsToModuleNameMapper } = require('ts-jest/utils')
-const { compilerOptions: { paths: paths } } = require('./tsconfig');
-
 module.exports = {
+  name: 'server',
+  displayName: 'Server tests',
+  rootDir: '.',
   preset: 'ts-jest',
   testEnvironment: 'node',
-  roots: ['<rootDir>'],
+  roots: ['<rootDir>/src/'],
   modulePaths: ['<rootDir>'],
-  moduleNameMapper: pathsToModuleNameMapper(paths),
-  "moduleDirectories": [
-      ".",
-      "src",
-      "src/common",
-      "src/modules",
-      "src/typings",
-      "node_modules"
-  ],
+  coverageDirectory: './coverage',
+  moduleDirectories: ['node_modules', 'src']
 };

@@ -9,14 +9,9 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "incremental": true,
-    "resolveJsonModule": true,
-    "paths": {
-      "@typings/*": ["./src/typings/*"],
-      "@modules/*": ["./src/modules/*"],
-      "@common/*": ["./src/common/*"]
-    }
+    "resolveJsonModule": true
   },
   "include": ["./src"],
   "exclude": ["node_modules", "dist"]

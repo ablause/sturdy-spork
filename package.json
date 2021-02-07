@@ -12,9 +12,15 @@
     "start": "yarn workspace @sturdy-spork/server start && yarn workspace @sturdy-spork/client start",
     "develop": "yarn workspace @sturdy-spork/server develop && yarn workspace @sturdy-spork/client develop",
     "build": "yarn workspace @sturdy-spork/server build && yarn workspace @sturdy-spork/client build",
-    "test": "yarn workspace @sturdy-spork/server test"
+    "test": "jest"
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "codecov": "^3.8.1",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.0"
+  }
 }
