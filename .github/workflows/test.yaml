@@ -22,9 +22,10 @@ jobs:
         run: yarn install
 
       - name: Run the tests
-        run: "yarn test --ci --coverage --collectCoverage"
+        run: "yarn test --ci --coverage --collectCoverage --detectOpenHandles"
 
       - name: Upload coverage to Codecov
+
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
